@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div>
+        {% for p in lista_produto %}
+        
+            <h2>{{ p.nome }}</h2>
+            <h2>{{ p.descricao }}</h2>
+            <h2>{{ p.categoria.nome }}</h2>
+
+        {% endfor%}
+    </div>
+{% endblock %}
