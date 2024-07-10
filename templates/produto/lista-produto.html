@@ -7,7 +7,8 @@
             <h2>{{ p.nome }}</h2>
             <h2>{{ p.descricao }}</h2>
             <h2>{{ p.categoria.nome }}</h2>
-            <a href="/atualizar/produto/{{p.index}}"> Atualizar</a>
+            <a href="/atualizar/produto/{{p.index}}/"> Atualizar</a>
+            <a href="/deletar/produto/{{p.index}}/">Deletar</a>
         {% endfor%}
     </div>
 {% endblock %}
