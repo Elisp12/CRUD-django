@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <form action="#" method="post">
+        {% csrf_token %}
+
+        {% for p in produto %}
+            <div>
+                <label for="nome"> Nome</label>
+                <input type="text" name="nome" id="nome" value="{{ p.nome }}" required>
+                <br>
+                <label for="descricao"> Descricao</label>
+                <input type="text" name="descricao" value="{{ p.descricao }}" id="descricao">
+            </div>
+            <div>
+                <label for="categoria"> categoria</label>
+                <select name="categoria" id="categoria" required>
+                    <option value="">selecione uma categoria</option>
+                    {% for cat in categoria %}
+                        <option value="{{ cat.index }}">{{ cat.nome }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="submit" value="Atualizar">
+        {% endfor%}
+    </form>
+{% endblock %}
